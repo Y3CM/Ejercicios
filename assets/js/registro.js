@@ -34,11 +34,13 @@ if (usersReg != null)
      
     if (existe(users,correo.value))
         {
+            msj.setAttribute('class','error')
             msj.innerHTML = `el correo ${correo.value} ya existe`
         }
         else
         {
             if (nombre.value === "" || apellido.value === "" || correo.value === "" || pass.value === "") {
+                msj.setAttribute('class','error')
                 msj.innerHTML = "Algunos campos están vacíos";
             } else
             {
@@ -50,6 +52,7 @@ if (usersReg != null)
             }
             users.push(objeto)
             localStorage.setItem('users', JSON.stringify(users))
+            msj.setAttribute('class','success')
             msj.innerHTML = `usuario registrado correctamente`
             nombre.value = ""
             apellido.value = ""

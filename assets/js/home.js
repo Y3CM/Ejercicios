@@ -5,8 +5,8 @@ let login = localStorage.getItem("login")
 
 if(login != undefined){
     let users = localStorage.getItem('users')
-    user = JSON.parse(users)
-        user.forEach(item => {
+    users = JSON.parse(users)
+        users.forEach(item => {
             saludo.innerHTML = (`Bienvenido ${item.nombre} ${item.apellido}`)
         });
 

@@ -14,20 +14,30 @@ btn.addEventListener('click',()=>{
     if(userReg != null){
         userReg.forEach(element => {
              if (element.correo == user.value) {
+                if(newPass.value == "" || confirmPass.value == ""){
+                    errorpas.setAttribute('class','error')
+                    return errorpas.innerHTML = "algunos campos estan vacios"
+                }
                 if(newPass.value == confirmPass.value)
                  {element.password = newPass.value
                     console.log(element)
                     localStorage.setItem("users",JSON.stringify(userReg))
+                    alert('contraseña recuperada correctamente')
+                     window.location.href = "./index.html" 
                  }
                  else{
-                     errorpas.innerHTML = "Las contraseñas no coinciden"
+                    errorpas.setAttribute('class','error')
+                   return  errorpas.innerHTML = "Las contraseñas no coinciden"
                  }
              } else {
-                 error.innerHTML = "Error, Usuario no registrado"  
+                error.setAttribute('class','error')
+                return error.innerHTML = "Error, Usuario no registrado"  
              }
         });
      }
          else{
-             error.innerHTML = " no hay Usuarios registrados"
+            error.setAttribute('class','error')
+            return error.innerHTML = " no hay Usuarios registrados"
          }
+        
  })

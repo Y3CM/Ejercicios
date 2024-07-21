@@ -31,11 +31,13 @@ btn.addEventListener('click',()=>{
                 localStorage.login = JSON.stringify(login)
                 window.location.href = "app.html"
             } else {
+                error.setAttribute('class','error')
                 error.innerHTML = "Error, Usuario o contraseña incorrecta"
             }
        });
     }
         else{
+            error.setAttribute('class','error')
             error.innerHTML = "Usuario no registrado"
         }
 })
