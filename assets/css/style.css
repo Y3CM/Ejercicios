@@ -116,6 +116,8 @@ label{
 h1{
     font-family: "Chiller";
     font-size: 50px;
+     font-family: "Chiller";
+    font-size: 45px;
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px 5px rgb(137, 43, 226);
 }
